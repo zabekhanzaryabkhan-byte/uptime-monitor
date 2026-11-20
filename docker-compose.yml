@@ -1,0 +1,9 @@
+services:
+  monitor:
+    build: .
+    container_name: website-monitor
+    env_file:
+      - .env
+    volumes:
+      - ./uptime_history.csv:/app/uptime_history.csv
+    restart: unless-stopped
